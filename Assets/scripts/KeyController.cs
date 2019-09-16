@@ -47,11 +47,11 @@ public class KeyController : MonoBehaviour
     // As long as we are colliding with a trigger collider
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("WORKING 111!");
+       
 
         if (other.name == "TriggerKey")
         {
-            Debug.Log("WORKING!");
+           
             // Show the instructions
             Keyinstructions.SetActive(true);
             // Get the Animator from the child of the door (If you have the Animator component in the parent,

@@ -35,6 +35,7 @@ public class BoxController : MonoBehaviour
     public chase c;
     public BGController bgc;
     public GameObject BoxTrigger;
+    public GameObject KeyTrigger;
 
 
     void Start()
@@ -64,6 +65,7 @@ public class BoxController : MonoBehaviour
                     //destroy box and ins
                     Destroy(BoxTrigger);
                     instructions.SetActive(false);
+                    KeyTrigger.gameObject.SetActive(true); //show key
                 }
                 else
                 {
