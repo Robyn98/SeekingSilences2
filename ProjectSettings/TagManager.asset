@@ -9,6 +9,7 @@ TagManager:
   - File
   - Broken Glass
   - Box
+  - Key
   layers:
   - Default
   - TransparentFX
