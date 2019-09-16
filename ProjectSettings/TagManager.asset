@@ -8,6 +8,7 @@ TagManager:
   - FE
   - File
   - Broken Glass
+  - Box
   layers:
   - Default
   - TransparentFX
