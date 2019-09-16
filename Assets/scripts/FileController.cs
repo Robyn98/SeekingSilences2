@@ -60,6 +60,7 @@ public class FileController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 fileOpen = !fileOpen;
+                Debug.Log("File Open? " + fileOpen);
                 if (fileOpen)
                 {
                     FileContent.gameObject.SetActive(true);
@@ -72,12 +73,7 @@ public class FileController : MonoBehaviour
                                                   //FileAudio.PlayOneShot(FileSound);
                 RandomFileAudio();
                 // kc.hasKeyImage.gameObject.SetActive(false); //no visual rep
-
-
-
             }
-
-
         }
     }
 
@@ -90,13 +86,18 @@ public class FileController : MonoBehaviour
             // Hide instructions
             instructions.SetActive(false);
 
-
-            fileOpen = !fileOpen;
-            if (!fileOpen)
+            if (fileOpen == true) //if file is open
+            {
+                FileContent.gameObject.SetActive(false);
+                other.GetComponentInChildren<Animator>().SetTrigger("OpenCloseFile");
+            }
+            else // or closed 
             {
                 FileContent.gameObject.SetActive(false);
             }
-            other.GetComponentInChildren<Animator>().SetTrigger("OpenCloseFile");
+            //remove the text and set bool to false
+            fileOpen = false;
+            
 
         }
     }
