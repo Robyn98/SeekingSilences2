@@ -33,7 +33,7 @@ public class DoorController : MonoBehaviour
     public AudioClip[] soundToPlay;
     public AudioClip[] closedDoorSoundToPlay;
     public chase c;
-    public KeyController kc;
+    public FEController fec;
 
 
     void Start()
@@ -54,21 +54,21 @@ public class DoorController : MonoBehaviour
             // Check if the player hits the "E" key and the player has the key
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if(kc.hasKey)
+                if (fec.hasFE)
                 {
                     anim.SetTrigger("OpenCloseDoor"); //Set the trigger "OpenClose" which is in the Animator
                                                       //doorAudio.PlayOneShot(doorSound);
                     RandomDoorAudio();
-                    kc.hasKeyImage.gameObject.SetActive(false); //no visual rep
+                    fec.hasFEImage.gameObject.SetActive(false); //no visual rep
                 }
                 else
                 {
                     RandomClosedDoorAudio();
                 }
-                
+
             }
-            
-                
+
+
         }
     }
 

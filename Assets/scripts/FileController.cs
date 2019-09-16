@@ -36,7 +36,7 @@ public class FileController : MonoBehaviour
     public chase c;
     public Image FileContent;
     public bool fileOpen = false;
-    
+
     //public KeyController kc;
 
 
@@ -56,11 +56,11 @@ public class FileController : MonoBehaviour
             // Get the Animator from the child of the File (If you have the Animator component in the parent,
             // then change it to "GetComponent")
             Animator anim = other.GetComponentInChildren<Animator>();
-            
+
             if (Input.GetKeyDown(KeyCode.E))
             {
                 fileOpen = !fileOpen;
-                if(fileOpen)
+                if (fileOpen)
                 {
                     FileContent.gameObject.SetActive(true);
                 }
@@ -71,7 +71,7 @@ public class FileController : MonoBehaviour
                 anim.SetTrigger("OpenCloseFile"); //Set the trigger "OpenClose" which is in the Animator
                                                   //FileAudio.PlayOneShot(FileSound);
                 RandomFileAudio();
-               // kc.hasKeyImage.gameObject.SetActive(false); //no visual rep
+                // kc.hasKeyImage.gameObject.SetActive(false); //no visual rep
 
 
 
@@ -89,8 +89,8 @@ public class FileController : MonoBehaviour
         {
             // Hide instructions
             instructions.SetActive(false);
-            
-            
+
+
             fileOpen = !fileOpen;
             if (!fileOpen)
             {
