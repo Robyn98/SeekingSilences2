@@ -28,19 +28,17 @@ using UnityEngine.UI;
 public class KeyController : MonoBehaviour
 {
     // The gameobject / UI that has the instructions for the player "Press 'E' to interact."
-    public GameObject instructions;
-    public GameObject FEinstructions;
+    public GameObject Keyinstructions;
 
     public AudioSource keyAudio;
     public AudioClip[] soundToPlay;
     public chase c;
+    
     public Image hasKeyImage;
     public bool hasKey = false;
-    public GameObject keyTrigger;
+    public GameObject KeyTrigger;
 
-    public Image hasFEImage;
-    public bool hasFE = false;
-    public GameObject FETrigger;
+
 
     void Start()
     {
@@ -49,33 +47,33 @@ public class KeyController : MonoBehaviour
     // As long as we are colliding with a trigger collider
     private void OnTriggerStay(Collider other)
     {
-        // Check if the object has the tag 'Door'
-        if (other.tag == "Key")
-        {
-            if (other.name == "KeyTrigger")
-            {
-                // Show the instructions
-                instructions.SetActive(true);
-                // Get the Animator from the child of the door (If you have the Animator component in the parent,
-                // then change it to "GetComponent")
-                //Animator anim = other.GetComponentInChildren<Animator>();
-                // Check if the player hits the "E" key
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    Debug.Log("Picked up key");
-                    //anim.SetTrigger("OpenCloseDoor"); //Set the trigger "OpenClose" which is in the Animator
-                    //doorAudio.PlayOneShot(doorSound);
-                    RandomKeyAudio();
+       
 
-                    hasKeyImage.gameObject.SetActive(true); //visual rep
-                    hasKey = true; //for logic
-                    Destroy(keyTrigger); //no physical key
-                    instructions.SetActive(false); //no ins
-                }
+        if (other.name == "TriggerKey")
+        {
+           
+            // Show the instructions
+            Keyinstructions.SetActive(true);
+            // Get the Animator from the child of the door (If you have the Animator component in the parent,
+            // then change it to "GetComponent")
+            //Animator anim = other.GetComponentInChildren<Animator>();
+            // Check if the player hits the "E" key
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Debug.Log("Picked up Key");
+                //anim.SetTrigger("OpenCloseDoor"); //Set the trigger "OpenClose" which is in the Animator
+                //doorAudio.PlayOneShot(doorSound);
+                RandomKeyAudio();
+
+                hasKeyImage.gameObject.SetActive(true); //visual rep
+                hasKey = true; //for logic
+                Destroy(KeyTrigger); //no physical key
+                Keyinstructions.SetActive(false); //no ins
             }
-   
         }
+
     }
+
 
     // Once we exit colliding with a trigger collider
     private void OnTriggerExit(Collider other)
@@ -84,7 +82,7 @@ public class KeyController : MonoBehaviour
         if (other.tag == "Key")
         {
             // Hide instructions
-            instructions.SetActive(false);
+            Keyinstructions.SetActive(false);
         }
 
     }
@@ -97,5 +95,6 @@ public class KeyController : MonoBehaviour
         keyAudio.clip = soundToPlay[Random.Range(0, soundToPlay.Length)];
         keyAudio.Play();
         c.chaseSpeed *= 1.1f; //make noise = increase speed
+
     }
 }

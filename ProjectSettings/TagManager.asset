@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Door
   - FE
+  - File
+  - Broken Glass
+  - Box
+  - Key
+  - ExitDoor
   layers:
   - Default
   - TransparentFX
