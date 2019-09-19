@@ -34,6 +34,9 @@ public class DoorController : MonoBehaviour
     public AudioClip[] closedDoorSoundToPlay;
     public chase c;
     public FEController fec;
+    private bool firstDoorOpen = false;
+    public AudioSource AS;
+    public AudioClip SIR;
 
 
     void Start()
@@ -64,6 +67,12 @@ public class DoorController : MonoBehaviour
                 else
                 {
                     RandomClosedDoorAudio();
+                }
+                //Intercom 2
+                if (!firstDoorOpen)
+                {
+                    AS.PlayOneShot(SIR);
+                    firstDoorOpen = true;
                 }
 
             }

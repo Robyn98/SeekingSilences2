@@ -36,7 +36,9 @@ public class BoxController : MonoBehaviour
     public BGController bgc;
     public GameObject BoxTrigger;
     public GameObject KeyTrigger;
-
+    private bool firstBoxOpen = false;
+    public AudioSource AS;
+    public AudioClip Thud;
 
     void Start()
     {
@@ -70,6 +72,12 @@ public class BoxController : MonoBehaviour
                 else
                 {
                     RandomClosedBoxAudio();
+                }
+                //Intercom 3
+                if (!firstBoxOpen)
+                {
+                    AS.PlayOneShot(Thud);
+                    firstBoxOpen = true;
                 }
 
             }

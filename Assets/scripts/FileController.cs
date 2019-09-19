@@ -36,7 +36,9 @@ public class FileController : MonoBehaviour
     public chase c;
     public Image FileContent;
     public bool fileOpen = false;
-
+    private bool firstFileOpen = false;
+    public AudioSource AS;
+    public AudioClip YDKB;
     //public KeyController kc;
 
 
@@ -64,6 +66,7 @@ public class FileController : MonoBehaviour
                 if (fileOpen)
                 {
                     FileContent.gameObject.SetActive(true);
+                    
                 }
                 else
                 {
@@ -72,6 +75,12 @@ public class FileController : MonoBehaviour
                 anim.SetTrigger("OpenCloseFile"); //Set the trigger "OpenClose" which is in the Animator
                                                   //FileAudio.PlayOneShot(FileSound);
                 RandomFileAudio();
+                //Intercom 2
+                if(!firstFileOpen)
+                {
+                    //AS.PlayOneShot(YDKB);
+                    firstFileOpen = true;
+                }
                 // kc.hasKeyImage.gameObject.SetActive(false); //no visual rep
             }
         }
