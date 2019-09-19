@@ -63,17 +63,18 @@ public class DoorController : MonoBehaviour
                                                       //doorAudio.PlayOneShot(doorSound);
                     RandomDoorAudio();
                     fec.hasFEImage.gameObject.SetActive(false); //no visual rep
+                                                                //Intercom 2
+                    if (!firstDoorOpen)
+                    {
+                        AS.PlayOneShot(SIR);
+                        firstDoorOpen = true;
+                    }
                 }
                 else
                 {
                     RandomClosedDoorAudio();
                 }
-                //Intercom 2
-                if (!firstDoorOpen)
-                {
-                    AS.PlayOneShot(SIR);
-                    firstDoorOpen = true;
-                }
+                
 
             }
 

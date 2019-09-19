@@ -61,24 +61,25 @@ public class BoxController : MonoBehaviour
                 if (bgc.hasBG)
                 {
                     //anim.SetTrigger("OpenCloseBox"); //Set the trigger "OpenClose" which is in the Animator
-                                                      //BoxAudio.PlayOneShot(BoxSound);
+                    //BoxAudio.PlayOneShot(BoxSound);
                     RandomBoxAudio();
                     bgc.hasBGImage.gameObject.SetActive(false); //no visual rep
                     //destroy box and ins
                     Destroy(BoxTrigger);
                     instructions.SetActive(false);
                     KeyTrigger.gameObject.SetActive(true); //show key
+                    //Intercom 3
+                    if (!firstBoxOpen)
+                    {
+                        AS.PlayOneShot(Thud);
+                        firstBoxOpen = true;
+                    }
                 }
                 else
                 {
                     RandomClosedBoxAudio();
                 }
-                //Intercom 3
-                if (!firstBoxOpen)
-                {
-                    AS.PlayOneShot(Thud);
-                    firstBoxOpen = true;
-                }
+
 
             }
 
