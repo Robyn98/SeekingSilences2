@@ -64,29 +64,23 @@ public class FEController : MonoBehaviour
     // As long as we are colliding with a trigger collider
     private void OnTriggerStay(Collider other)
     {
+        if (other.name != "TriggerFE") return;
+        // Show the instructions
+        FEinstructions.SetActive(true);
+        // Get the Animator from the child of the door (If you have the Animator component in the parent,
+        // then change it to "GetComponent")
+        //Animator anim = other.GetComponentInChildren<Animator>();
+        // Check if the player hits the "E" key
+        if (!Input.GetKeyDown(KeyCode.E)) return;
+        Debug.Log("Picked up FE");
+        //anim.SetTrigger("OpenCloseDoor"); //Set the trigger "OpenClose" which is in the Animator
+        //doorAudio.PlayOneShot(doorSound);
+        RandomKeyAudio();
 
-
-        if (other.name == "TriggerFE")
-        {
-            // Show the instructions
-            FEinstructions.SetActive(true);
-            // Get the Animator from the child of the door (If you have the Animator component in the parent,
-            // then change it to "GetComponent")
-            //Animator anim = other.GetComponentInChildren<Animator>();
-            // Check if the player hits the "E" key
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                Debug.Log("Picked up FE");
-                //anim.SetTrigger("OpenCloseDoor"); //Set the trigger "OpenClose" which is in the Animator
-                //doorAudio.PlayOneShot(doorSound);
-                RandomKeyAudio();
-
-                hasFEImage.gameObject.SetActive(true); //visual rep
-                hasFE = true; //for logic
-                Destroy(FETrigger); //no physical key
-                FEinstructions.SetActive(false); //no ins
-            }
-        }
+        hasFEImage.gameObject.SetActive(true); //visual rep
+        hasFE = true; //for logic
+        Destroy(FETrigger); //no physical key
+        FEinstructions.SetActive(false); //no ins
 
     }
 
@@ -95,14 +89,15 @@ public class FEController : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
 
-        if (other.tag == "FE")
+        if (other.CompareTag("FE"))
         {
             // Hide instructions
             FEinstructions.SetActive(false);
         }
 
     }
-    void RandomKeyAudio()
+
+    private void RandomKeyAudio()
     {
         if (keyAudio.isPlaying)
         {

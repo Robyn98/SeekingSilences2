@@ -16,6 +16,7 @@
           <e p="FileController.cs" t="Include" />
           <e p="GameEnding.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
+          <e p="Jumpscare.cs" t="Include" />
           <e p="KeyController.cs" t="Include" />
           <e p="PlayerLook.cs" t="Include" />
           <e p="PlayerMove.cs" t="Include" />
