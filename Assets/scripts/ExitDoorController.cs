@@ -34,17 +34,19 @@ public class ExitDoorController : MonoBehaviour
     public AudioClip[] closedExitDoorSoundToPlay;
     public chase c;
     public KeyController kc;
+    private static readonly int OpenCloseDoor = Animator.StringToHash("OpenCloseDoor");
 
 
     void Start()
     {
         //audio = GetComponent<AudioSource>();
     }
+
     // As long as we are colliding with a trigger collider
     private void OnTriggerStay(Collider other)
     {
         // Check if the object has the tag 'ExitDoor'
-        if (other.tag == "ExitDoor")
+        if (other.CompareTag("DoubleDoor"))
         {
             // Show the instructions
             instructions.SetActive(true);
@@ -57,7 +59,7 @@ public class ExitDoorController : MonoBehaviour
                 if (kc.hasKey)
                 {
                     anim.SetTrigger("OpenCloseDoor"); //Set the trigger "OpenClose" which is in the Animator
-                                                      //ExitDoorAudio.PlayOneShot(ExitDoorSound);
+                    //ExitDoorAudio.PlayOneShot(ExitDoorSound);
                     RandomExitDoorAudio();
                     kc.hasKeyImage.gameObject.SetActive(false); //no visual rep
                 }
@@ -65,10 +67,29 @@ public class ExitDoorController : MonoBehaviour
                 {
                     RandomClosedExitDoorAudio();
                 }
-
             }
+        }
 
-
+        if (!other.CompareTag("ExitDoor")) return;
+        {
+            // Show the instructions
+            instructions.SetActive(true);
+            // Get the Animator from the child of the ExitDoor (If you have the Animator component in the parent,
+            // then change it to "GetComponent")
+            Animator anim = other.GetComponentInChildren<Animator>();
+            // Check if the player hits the "E" key and the player has the key
+            if (!Input.GetKeyDown(KeyCode.E)) return;
+            if (kc.hasKeyExit)
+            {
+                anim.SetTrigger(OpenCloseDoor); //Set the trigger "OpenClose" which is in the Animator
+                //ExitDoorAudio.PlayOneShot(ExitDoorSound);
+                RandomExitDoorAudio();
+                kc.hasKeyImageExit.gameObject.SetActive(false); //no visual rep
+            }
+            else
+            {
+                RandomClosedExitDoorAudio();
+            }
         }
     }
 
@@ -76,33 +97,34 @@ public class ExitDoorController : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         // Check it is a ExitDoor
-        if (other.tag == "ExitDoor")
+        if (other.CompareTag("ExitDoor") || other.CompareTag("DoubleDoor"))
         {
             // Hide instructions
             instructions.SetActive(false);
         }
     }
+
     void RandomExitDoorAudio()
     {
         if (ExitDoorAudio.isPlaying)
         {
             return;
         }
+
         ExitDoorAudio.clip = soundToPlay[Random.Range(0, soundToPlay.Length)];
         ExitDoorAudio.Play();
         c.chaseSpeed *= 1.1f; //make noise = increase speedw
-
     }
+
     void RandomClosedExitDoorAudio()
     {
         if (closedExitDoorAudio.isPlaying)
         {
             return;
         }
+
         closedExitDoorAudio.clip = closedExitDoorSoundToPlay[Random.Range(0, closedExitDoorSoundToPlay.Length)];
         closedExitDoorAudio.Play();
         c.chaseSpeed *= 1.1f; //make noise = increase speedw
-
     }
 }
-

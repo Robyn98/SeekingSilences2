@@ -1,24 +1,4 @@
-﻿/* 
-* Created by: Omar Balfaqih (@OBalfaqih)
-* http://obalfaqih.com
-*
-* Interacting with Boxs | Unity
-*
-* This simple script is to interact with Boxs (open/close) when the player presses "E"
-*
-* Full tutorial available at:
-* https://www.youtube.com/watch?v=nONlAXpCkag
-*/
-
-/*
-* How to use:
-* 1- Attach this script to your player
-* 2- Make sure that the player has Rigidbody and Collider components
-* 3- The Box's parent has a collider with trigger checked
-* 4- Box's parent has the tag "Box"
-* 5- The Box itself has an Animator and it has a parameter of type trigger called "OpenClose"
-*    which is responsible for the transition between opening and closing.
-*/
+﻿
 
 using System.Collections;
 using System.Collections.Generic;
@@ -50,7 +30,7 @@ public class BoxController : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         // Check if the object has the tag 'Box'
-        if (other.tag == "Box")
+        if (other.CompareTag("Box"))
         {
             // Show the instructions
             instructions.SetActive(true);
@@ -93,7 +73,7 @@ public class BoxController : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         // Check it is a Box
-        if (other.tag == "Box")
+        if (other.CompareTag("Box"))
         {
             // Hide instructions
             instructions.SetActive(false);

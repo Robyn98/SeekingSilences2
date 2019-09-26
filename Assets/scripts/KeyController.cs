@@ -30,6 +30,8 @@ public class KeyController : MonoBehaviour
     // The gameobject / UI that has the instructions for the player "Press 'E' to interact."
     public GameObject Keyinstructions;
 
+    
+
     public AudioSource keyAudio;
     public AudioClip[] soundToPlay;
     public chase c;
@@ -37,6 +39,11 @@ public class KeyController : MonoBehaviour
     public Image hasKeyImage;
     public bool hasKey = false;
     public GameObject KeyTrigger;
+    
+    public GameObject KeyinstructionsExit;
+    public Image hasKeyImageExit;
+    public bool hasKeyExit = false;
+    public GameObject KeyTriggerExit;
 
 
 
@@ -52,15 +59,11 @@ public class KeyController : MonoBehaviour
            
             // Show the instructions
             Keyinstructions.SetActive(true);
-            // Get the Animator from the child of the door (If you have the Animator component in the parent,
-            // then change it to "GetComponent")
-            //Animator anim = other.GetComponentInChildren<Animator>();
-            // Check if the player hits the "E" key
+        
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Debug.Log("Picked up Key");
-                //anim.SetTrigger("OpenCloseDoor"); //Set the trigger "OpenClose" which is in the Animator
-                //doorAudio.PlayOneShot(doorSound);
+                
                 RandomKeyAudio();
 
                 hasKeyImage.gameObject.SetActive(true); //visual rep
@@ -70,6 +73,20 @@ public class KeyController : MonoBehaviour
             }
         }
 
+        if (other.name != "TriggerKeyExit") return;
+        // Show the instructions
+        Keyinstructions.SetActive(true);
+
+        if (!Input.GetKeyDown(KeyCode.E)) return;
+        Debug.Log("Picked up Key for exit");
+                
+        RandomKeyAudio();
+
+        hasKeyImageExit.gameObject.SetActive(true); //visual rep
+        hasKeyExit = true; //for logic
+        Destroy(KeyTriggerExit); //no physical key
+        KeyinstructionsExit.SetActive(false); //no ins
+
     }
 
 
@@ -77,7 +94,7 @@ public class KeyController : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
 
-        if (other.tag == "Key")
+        if (other.CompareTag("Key"))
         {
             // Hide instructions
             Keyinstructions.SetActive(false);

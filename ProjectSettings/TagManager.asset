@@ -11,6 +11,7 @@ TagManager:
   - Box
   - Key
   - ExitDoor
+  - DoubleDoor
   layers:
   - Default
   - TransparentFX

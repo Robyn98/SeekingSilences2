@@ -7,6 +7,7 @@ public class Jumpscare : MonoBehaviour {
 
     public GameObject jumpscareObject;
     private bool entered = false;
+    private bool done = false;
     [SerializeField] private float translationMultiplier = 15f;
     [SerializeField] private float deleteTime = 2.5f;
     private void Start () {
@@ -16,18 +17,20 @@ public class Jumpscare : MonoBehaviour {
 
     private void Update()
     {
-        if (!entered) return;
+        if (!entered || done) return;
         // Move the object forward along its z axis 1 unit/second.
         jumpscareObject.transform.Translate(translation: translationMultiplier * Time.deltaTime * Vector3.forward);
-        //Debug.Log("Z: " + jumpscareObject.transform.position.z);
+        
     }
 
     private void OnTriggerEnter (Collider player) {
-        if (!player.CompareTag("Player")) return;
+        Debug.Log("Entered: "+ entered);
+        if (!player.CompareTag("Player") || entered) return;
+        entered = true;
         jumpscareObject.SetActive(true);
         StartCoroutine(DestroyObject());
-        entered = true;
-        Debug.Log("Entered");
+        
+        //Debug.Log("Entered");
     }
 
     private IEnumerator DestroyObject()
@@ -35,5 +38,6 @@ public class Jumpscare : MonoBehaviour {
         yield return new WaitForSeconds(deleteTime);
         Destroy(jumpscareObject);
         Destroy(gameObject);
+        done = true;
     }
 }

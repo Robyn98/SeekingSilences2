@@ -20,28 +20,28 @@ public class GameEnding : MonoBehaviour
 
     public chase c;
 
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Exit1");
+        //Debug.Log("Exit1");
         if (other.gameObject == player)
         {
             m_IsPlayerAtExit = true;
-            Debug.Log("Exit2");
+            //Debug.Log("Exit2");
         }
     }
 
     public void CaughtPlayer()
     {
         m_IsPlayerCaught = true;
-        Debug.Log("Caught");
+        //Debug.Log("Caught");
     }
 
-    void Update()
+    private void Update()
     {
         if (m_IsPlayerAtExit)
         {
             EndLevel(exitBackgroundImage, false, exitAudio);
-            Debug.Log("Exit3");
+            //Debug.Log("Exit3");
 
         }
         else if (m_IsPlayerCaught)
@@ -50,7 +50,7 @@ public class GameEnding : MonoBehaviour
         }
     }
 
-    void EndLevel(Image image, bool doRestart, AudioSource audioSource)
+    private void EndLevel(Component image, bool doRestart, AudioSource audioSource)
     {
         if (!m_HasAudioPlayed)
         {
@@ -61,18 +61,16 @@ public class GameEnding : MonoBehaviour
         m_Timer += Time.deltaTime;
         //image.alpha = m_Timer / fadeDuration;
         image.gameObject.SetActive(true);
-        Debug.Log("Exit4");
-        if (m_Timer > fadeDuration + displayImageDuration)
+        //Debug.Log("Exit4");
+        if (!(m_Timer > fadeDuration + displayImageDuration)) return;
+        if (doRestart)
         {
-            if (doRestart)
-            {
-                SceneManager.LoadScene(0);
-            }
-            else
-            {
-                Debug.Log("Exit5");
-                Application.Quit();
-            }
+            SceneManager.LoadScene(0);
+        }
+        else
+        {
+            //Debug.Log("Exit5");
+            Application.Quit();
         }
     }
 }
