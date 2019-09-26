@@ -47,8 +47,6 @@ public class KeyController : MonoBehaviour
     // As long as we are colliding with a trigger collider
     private void OnTriggerStay(Collider other)
     {
-       
-
         if (other.name == "TriggerKey")
         {
            

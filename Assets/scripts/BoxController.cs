@@ -39,6 +39,8 @@ public class BoxController : MonoBehaviour
     private bool firstBoxOpen = false;
     public AudioSource AS;
     public AudioClip Thud;
+    //publiv Audio
+    
 
     void Start()
     {

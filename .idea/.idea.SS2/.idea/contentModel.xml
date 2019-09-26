@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\admin\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\admin\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_SS2.66234703.00" t="ExcludeRecursive" />
+    <e p="D:\_University\Semester 2\GD3B\SS2" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="scripts" t="Include">
+          <e p="BGController.cs" t="Include" />
+          <e p="BoxController.cs" t="Include" />
+          <e p="chase.cs" t="Include" />
+          <e p="DoorController.cs" t="Include" />
+          <e p="ExitDoorController.cs" t="Include" />
+          <e p="FEController.cs" t="Include" />
+          <e p="FileController.cs" t="Include" />
+          <e p="GameEnding.cs" t="Include" />
+          <e p="GameManager.cs" t="Include" />
+          <e p="KeyController.cs" t="Include" />
+          <e p="PlayerLook.cs" t="Include" />
+          <e p="PlayerMove.cs" t="Include" />
+          <e p="ThrowObject.cs" t="Include" />
+          <e p="TimsFolder" t="Include">
+            <e p="DoorController.cs" t="Include" />
+            <e p="InteractableBehaviour.cs" t="Include" />
+          </e>
+        </e>
+        <e p="SimpleGridShader" t="Include">
+          <e p="DistanceScaling.cs" t="Include" />
+          <e p="GridShader.shader" t="Include" />
+          <e p="README.txt" t="Include" />
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="SS2.sln" t="IncludeFlat" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

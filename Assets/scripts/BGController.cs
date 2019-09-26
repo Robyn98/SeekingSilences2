@@ -25,6 +25,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class BGController : MonoBehaviour
 {
     // The gameobject / UI that has the instructions for the player "Press 'E' to interact."

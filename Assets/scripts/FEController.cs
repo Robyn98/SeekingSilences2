@@ -20,10 +20,13 @@
 *    which is responsible for the transition between opening and closing.
 */
 
-using System.Collections;
-using System.Collections.Generic;
+using System;//
+using System.Collections;//
+using System.Collections.Generic;//
 using UnityEngine;
+using UnityEngine.Events;  //
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class FEController : MonoBehaviour
 {
@@ -33,16 +36,30 @@ public class FEController : MonoBehaviour
     public AudioSource keyAudio;
     public AudioClip[] soundToPlay;
     public chase c;
+
+   // private Event anotherEvent;
+   // private UnityEvent thisEvent;
+  //  private Action thisIsAction;
+
+   // public delegate void ControllerEvent(FEController feController);
+
+   // public event ControllerEvent Interact;
     
     public Image hasFEImage;
     public bool hasFE = false;
     public GameObject FETrigger;
 
 
+//    public void OnInteract(FEController fe)
+//    {
+//
+//    }
 
     void Start()
     {
         //audio = GetComponent<AudioSource>();
+
+        //this.Interact += OnInteract;
     }
     // As long as we are colliding with a trigger collider
     private void OnTriggerStay(Collider other)

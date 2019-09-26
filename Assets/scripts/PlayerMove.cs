@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using TimsFolder;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
@@ -36,6 +38,27 @@ public class PlayerMove : MonoBehaviour
     private void Update()
     {
         PlayerMovement();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        var interactable = other.GetComponent<InteractableBehaviour>();
+        if ( interactable == null )
+        {
+            return;
+        }
+
+        if (Input.GetKey(KeyCode.E))
+        {
+            if (interactable is DoorController)
+            {
+                //////
+                /// retuen
+            }
+            
+            interactable.Interact(this);
+        }
+
     }
 
     private void PlayerMovement()
