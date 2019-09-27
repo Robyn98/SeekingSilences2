@@ -16,6 +16,7 @@ ModelImporter:
     2100004: Glass
     2100006: metal02
     2100008: Glass01
+    2100010: MetalFinal
     2300000: Cube
     2300002: Cube.001
     2300004: Cube.002
@@ -40,7 +41,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Glass01
-    second: {fileID: 2100000, guid: d95154f98ca66b344afc5bf62f7101ae, type: 3}
+    second: {fileID: 2100000, guid: f67fcbd0fee83c7498b2f866eb58a130, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
