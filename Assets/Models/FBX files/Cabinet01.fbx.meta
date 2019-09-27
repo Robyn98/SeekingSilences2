@@ -1,26 +1,62 @@
 fileFormatVersion: 2
-guid: da134acc007202d4c89c63796b123543
+guid: 38413fdd89ab3694a827d563dd2ad417
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Cube
+    100004: Cube.001
+    100006: Cube.002
     400000: //RootNode
+    400002: Cube
+    400004: Cube.001
+    400006: Cube.002
     2100000: Material.001
-    2100002: Material.002
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Cylinder
+    2100002: metal01
+    2100004: Glass
+    2100006: metal02
+    2100008: Glass01
+    2100010: MetalFinal
+    2300000: Cube
+    2300002: Cube.001
+    2300004: Cube.002
+    3300000: Cube
+    3300002: Cube.001
+    3300004: Cube.002
+    4300000: Cube
+    4300002: Cube.001
+    4300004: Cube.002
+    7400000: Cube.001|Opening Left Door
+    7400002: Cube.001|Opening Right Door.001
+    7400004: Cube.002|Opening Left Door
+    7400006: Cube.002|Opening Right Door.001
+    9500000: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: c9d5ea27ad15adc428bd56a8e187df5f, type: 2}
+      name: Glass
+    second: {fileID: 2100000, guid: d95154f98ca66b344afc5bf62f7101ae, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.002
-    second: {fileID: 2100000, guid: e54445c7ac03ebb4b9463bfc8cd600c8, type: 2}
+      name: Glass01
+    second: {fileID: 2100000, guid: f67fcbd0fee83c7498b2f866eb58a130, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100002, guid: d95154f98ca66b344afc5bf62f7101ae, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal01
+    second: {fileID: 2100002, guid: d95154f98ca66b344afc5bf62f7101ae, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal02
+    second: {fileID: 2100002, guid: d95154f98ca66b344afc5bf62f7101ae, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
@@ -72,8 +108,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -100,7 +136,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
