@@ -12,6 +12,7 @@ TagManager:
   - Key
   - ExitDoor
   - DoubleDoor
+  - Outside
   layers:
   - Default
   - TransparentFX
