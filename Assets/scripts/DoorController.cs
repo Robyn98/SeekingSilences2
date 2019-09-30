@@ -21,7 +21,8 @@ public class DoorController : MonoBehaviour
     public AudioSource AS;
     public AudioClip SIR;
     private static readonly int OpenCloseDoor = Animator.StringToHash("OpenCloseDoor");
-
+    private bool ER1DT = false;
+    [SerializeField] private AudioClip DoorSlamSound;
 
     // As long as we are colliding with a trigger collider
     private void OnTriggerStay(Collider other)
@@ -60,6 +61,16 @@ public class DoorController : MonoBehaviour
         {
             // Hide instructions
             instructions.SetActive(false);
+            
+            //if first time
+            if (!ER1DT && other.name == "R1DT")
+            {
+                var anim = other.GetComponentInChildren<Animator>();
+                anim.SetTrigger(OpenCloseDoor);
+                AS.PlayOneShot(DoorSlamSound);
+                ER1DT = true;
+            }
+            
         }
     }
 
