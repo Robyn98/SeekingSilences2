@@ -93,9 +93,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   light: {fileID: 1924386759}
   material: {fileID: 2100000, guid: 5402a5faaf4866b4d863db132f7c07bf, type: 2}
-  time: 30
-  maxInterval: 1.2
-  minInterval: 0.2
+  time: 20
+  maxInterval: 5
+  minInterval: 1
 --- !u!1 &1924386757
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 1924386758}
   - component: {fileID: 1924386759}
   m_Layer: 0
-  m_Name: Spot Light
+  m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

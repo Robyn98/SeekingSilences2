@@ -22,15 +22,17 @@ public class FlickeringLight : MonoBehaviour
         interval = minInterval + timer / time * (maxInterval - minInterval);
         timer -= Time.deltaTime;
         if (timer < 0.0f) timer = 0.0f;
-        light.gameObject.SetActive(Mathf.PingPong(Time.time, interval) > (interval / 2.0f));
+        
         if (Mathf.PingPong(Time.time, interval) > (interval / 2.0f))
         {
             material.EnableKeyword("_EMISSION");
+            light.gameObject.SetActive(true);
         }
         else
         {
             
             material.DisableKeyword("_EMISSION");
+            light.gameObject.SetActive(false);
         }
 
         // material.shader.
