@@ -44,12 +44,13 @@ public class KeyController : MonoBehaviour
     public Image hasKeyImageExit;
     public bool hasKeyExit = false;
     public GameObject KeyTriggerExit;
-
+    [SerializeField] private AudioSource AS;
+    [SerializeField] private AudioClip run;
 
 
     void Start()
     {
-        //audio = GetComponent<AudioSource>();
+        AS = GetComponent<AudioSource>();
     }
     // As long as we are colliding with a trigger collider
     private void OnTriggerStay(Collider other)
@@ -81,7 +82,7 @@ public class KeyController : MonoBehaviour
         Debug.Log("Picked up Key for exit");
                 
         RandomKeyAudio();
-
+        AS.PlayOneShot(run);
         hasKeyImageExit.gameObject.SetActive(true); //visual rep
         hasKeyExit = true; //for logic
         Destroy(KeyTriggerExit); //no physical key
