@@ -21,8 +21,14 @@ public class DoorController : MonoBehaviour
     public AudioSource AS;
     public AudioClip SIR;
     private static readonly int OpenCloseDoor = Animator.StringToHash("OpenCloseDoor");
+
     private bool ER1DT = false;
+
+    //private bool TRDT = false;
     [SerializeField] private AudioClip DoorSlamSound;
+
+    [SerializeField] private GameObject FEHint;
+    [SerializeField] private GameObject Key1Hint;
 
     // As long as we are colliding with a trigger collider
     private void OnTriggerStay(Collider other)
@@ -46,10 +52,12 @@ public class DoorController : MonoBehaviour
             if (firstDoorOpen) return;
             AS.PlayOneShot(SIR);
             firstDoorOpen = true;
+            StartCoroutine(StartCountdown(5f, Key1Hint,true));
         }
         else
         {
             RandomClosedDoorAudio();
+            StartCoroutine(StartCountdown(5f, FEHint,false));
         }
     }
 
@@ -61,7 +69,7 @@ public class DoorController : MonoBehaviour
         {
             // Hide instructions
             instructions.SetActive(false);
-            
+
             //if first time
             if (!ER1DT && other.name == "R1DT")
             {
@@ -70,7 +78,6 @@ public class DoorController : MonoBehaviour
                 AS.PlayOneShot(DoorSlamSound);
                 ER1DT = true;
             }
-            
         }
     }
 
@@ -96,5 +103,27 @@ public class DoorController : MonoBehaviour
         closedDoorAudio.clip = closedDoorSoundToPlay[Random.Range(0, closedDoorSoundToPlay.Length)];
         closedDoorAudio.Play();
         c.chaseSpeed *= 1.1f; //make noise = increase speed
+    }
+
+    private float currCountdownValue;
+
+    public IEnumerator StartCountdown(float countdownValue, GameObject go, bool beforeWait)
+    {
+        if (beforeWait)
+        {
+            yield return new WaitForSeconds(10.0f);
+        }
+        
+        go.gameObject.SetActive(true);
+        currCountdownValue = countdownValue;
+        while (currCountdownValue > 0)
+        {
+            //Debug.Log("Countdown: " + currCountdownValue);
+            yield return new WaitForSeconds(1.0f);
+
+            currCountdownValue--;
+        }
+
+        go.gameObject.SetActive(false);
     }
 }
