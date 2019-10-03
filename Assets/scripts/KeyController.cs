@@ -46,11 +46,12 @@ public class KeyController : MonoBehaviour
     public GameObject KeyTriggerExit;
     [SerializeField] private AudioSource AS;
     [SerializeField] private AudioClip run;
+    [SerializeField] private GameObject runHint;
 
 
     void Start()
     {
-        AS = GetComponent<AudioSource>();
+        //AS = GetComponent<AudioSource>();
     }
     // As long as we are colliding with a trigger collider
     private void OnTriggerStay(Collider other)
@@ -66,7 +67,7 @@ public class KeyController : MonoBehaviour
                 Debug.Log("Picked up Key");
                 
                 RandomKeyAudio();
-
+                
                 hasKeyImage.gameObject.SetActive(true); //visual rep
                 hasKey = true; //for logic
                 Destroy(KeyTrigger); //no physical key
@@ -83,6 +84,9 @@ public class KeyController : MonoBehaviour
                 
         RandomKeyAudio();
         AS.PlayOneShot(run);
+        
+        StartCoroutine(StartCountdown(15f,runHint));
+        
         hasKeyImageExit.gameObject.SetActive(true); //visual rep
         hasKeyExit = true; //for logic
         Destroy(KeyTriggerExit); //no physical key
@@ -113,4 +117,19 @@ public class KeyController : MonoBehaviour
         c.chaseSpeed *= 1.1f; //make noise = increase speed
 
     }
+
+    private float currCountdownValue;
+ public IEnumerator StartCountdown(float countdownValue, GameObject go)
+ {
+     go.gameObject.SetActive(true);
+     currCountdownValue = countdownValue;
+     while (currCountdownValue > 0)
+     {
+         //Debug.Log("Countdown: " + currCountdownValue);
+         yield return new WaitForSeconds(1.0f);
+         
+         currCountdownValue--;
+     }
+     go.gameObject.SetActive(false);
+ }
 }

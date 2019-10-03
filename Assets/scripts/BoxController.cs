@@ -19,13 +19,11 @@ public class BoxController : MonoBehaviour
     private bool firstBoxOpen = false;
     public AudioSource AS;
     public AudioClip Thud;
-    //publiv Audio
     
-
-    void Start()
-    {
-        //audio = GetComponent<AudioSource>();
-    }
+    private float currCountdownValue;
+    
+    [SerializeField] private GameObject Key2Hint;
+    
     // As long as we are colliding with a trigger collider
     private void OnTriggerStay(Collider other)
     {
@@ -55,6 +53,7 @@ public class BoxController : MonoBehaviour
                     {
                         AS.PlayOneShot(Thud);
                         firstBoxOpen = true;
+                        StartCoroutine(StartCountdown(5f, Key2Hint,true));
                     }
                 }
                 else
@@ -100,6 +99,26 @@ public class BoxController : MonoBehaviour
         closedBoxAudio.Play();
         c.chaseSpeed *= 1.1f; //make noise = increase speedw
 
+    }
+    
+    public IEnumerator StartCountdown(float countdownValue, GameObject go, bool beforeWait)
+    {
+        if (beforeWait)
+        {
+            yield return new WaitForSeconds(10.0f);
+        }
+        
+        go.gameObject.SetActive(true);
+        currCountdownValue = countdownValue;
+        while (currCountdownValue > 0)
+        {
+            //Debug.Log("Countdown: " + currCountdownValue);
+            yield return new WaitForSeconds(1.0f);
+
+            currCountdownValue--;
+        }
+
+        go.gameObject.SetActive(false);
     }
 }
 
