@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 53b3fdedade67a34c94110b25af054a5
-=======
-guid: 6d5696da796eb8d41b81eff7995bb8b0
->>>>>>> 643f916e1e1a6600c878ab9c138becf88b4ad5eb
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -26,6 +22,7 @@ ModelImporter:
     3300002: Icosphere
     4300000: Icosphere
     4300002: Cylinder
+    9500000: //RootNode
     10800000: Light
   externalObjects: {}
   materials:
@@ -79,8 +76,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -107,7 +104,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
