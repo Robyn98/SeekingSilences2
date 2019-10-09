@@ -76,7 +76,7 @@ public class FEController : MonoBehaviour
         //anim.SetTrigger("OpenCloseDoor"); //Set the trigger "OpenClose" which is in the Animator
         //doorAudio.PlayOneShot(doorSound);
         RandomKeyAudio();
-
+    
         hasFEImage.gameObject.SetActive(true); //visual rep
         hasFE = true; //for logic
         Destroy(FETrigger); //no physical key
