@@ -38,7 +38,7 @@ public class BGController : MonoBehaviour
     public Image hasBGImage;
     public bool hasBG = false;
     public GameObject BGTrigger;
-
+    [SerializeField] private GameObject BGHint;
 
 
     void Start()
@@ -64,7 +64,7 @@ public class BGController : MonoBehaviour
                 //anim.SetTrigger("OpenCloseDoor"); //Set the trigger "OpenClose" which is in the Animator
                 //doorAudio.PlayOneShot(doorSound);
                 RandomKeyAudio();
-
+                StartCoroutine(StartCountdown(5f, BGHint,true));
                 hasBGImage.gameObject.SetActive(true); //visual rep
                 hasBG = true; //for logic
                 Destroy(BGTrigger); //no physical key
@@ -96,5 +96,26 @@ public class BGController : MonoBehaviour
         keyAudio.Play();
         c.chaseSpeed *= 1.1f; //make noise = increase speed
 
+    }
+    
+    private float currCountdownValue;
+    public IEnumerator StartCountdown(float countdownValue, GameObject go, bool beforeWait)
+    {
+        if (beforeWait)
+        {
+            yield return new WaitForSeconds(5.0f);
+        }
+        
+        go.gameObject.SetActive(true);
+        currCountdownValue = countdownValue;
+        while (currCountdownValue > 0)
+        {
+            //Debug.Log("Countdown: " + currCountdownValue);
+            yield return new WaitForSeconds(1.0f);
+
+            currCountdownValue--;
+        }
+
+        go.gameObject.SetActive(false);
     }
 }
