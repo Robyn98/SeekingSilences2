@@ -12889,7 +12889,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 38413fdd89ab3694a827d563dd2ad417, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 38413fdd89ab3694a827d563dd2ad417, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26429,7 +26429,7 @@ MonoBehaviour:
   c: {fileID: 799145204}
   fec: {fileID: 975878771}
   AS: {fileID: 975878770}
-  SIR: {fileID: 8300000, guid: 3f5a55a73b7002740b2638648e14cb52, type: 3}
+  SIR: {fileID: 8300000, guid: 8a9250bbf462f8b4abe671fbb99e1063, type: 3}
   DoorSlamSound: {fileID: 8300000, guid: eb93827fae695514d8a1a13b030076f7, type: 3}
   FEHint: {fileID: 1117547919}
   Key1Hint: {fileID: 432438748}
@@ -34163,7 +34163,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b8c7a6fd20aaf59448f4029aa89ee43b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9536ca9a666bbff4e8eeaa64a2ffce73, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.2
   m_Pitch: 1
@@ -53393,6 +53393,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4005156774283032491, guid: 576ed93ab9f084743bd7eced26066d71,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0367e2b9e4965894f9e0d6411c10227b, type: 3}
     - target: {fileID: 4005156774283032495, guid: 576ed93ab9f084743bd7eced26066d71,
         type: 3}
       propertyPath: player
