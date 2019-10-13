@@ -35,7 +35,7 @@ public class ExitDoorController : MonoBehaviour
     public chase c;
     public KeyController kc;
     private static readonly int OpenCloseDoor = Animator.StringToHash("OpenCloseDoor");
-
+    [SerializeField] private GameObject ExitKeyHint;
 
     void Start()
     {
@@ -89,6 +89,8 @@ public class ExitDoorController : MonoBehaviour
             else
             {
                 RandomClosedExitDoorAudio();
+
+                StartCoroutine(StartCountdown(5f, ExitKeyHint, false));
             }
         }
     }
@@ -126,5 +128,26 @@ public class ExitDoorController : MonoBehaviour
         closedExitDoorAudio.clip = closedExitDoorSoundToPlay[Random.Range(0, closedExitDoorSoundToPlay.Length)];
         closedExitDoorAudio.Play();
         c.chaseSpeed *= 1.1f; //make noise = increase speedw
+    }
+    private float currCountdownValue;
+
+    public IEnumerator StartCountdown(float countdownValue, GameObject go, bool beforeWait)
+    {
+        if (beforeWait)
+        {
+            yield return new WaitForSeconds(10.0f);
+        }
+        
+        go.gameObject.SetActive(true);
+        currCountdownValue = countdownValue;
+        while (currCountdownValue > 0)
+        {
+            //Debug.Log("Countdown: " + currCountdownValue);
+            yield return new WaitForSeconds(1.0f);
+
+            currCountdownValue--;
+        }
+
+        go.gameObject.SetActive(false);
     }
 }
