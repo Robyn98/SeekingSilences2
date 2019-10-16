@@ -1,12 +1,19 @@
 fileFormatVersion: 2
-guid: fdc23364ef854134a8dcd476cf423e35
+guid: 27e3d2089ce5b974b973f6db75842a2e
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Cube
+    100004: Light
     400000: //RootNode
-    9500000: //RootNode
-    2186277476908879412: ImportLogs
+    400002: Cube
+    400004: Light
+    2100000: Material.001
+    2300000: Cube
+    3300000: Cube
+    4300000: Cube
+    10800000: Light
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -60,7 +67,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -87,7 +94,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
