@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7e3587557011dde4582bd7f47ab4a96c
+guid: fb7556c083833a44187b3efcedd811aa
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -8,11 +8,11 @@ ModelImporter:
     2100000: Material.002
     2300000: //RootNode
     3300000: //RootNode
-    4300000: DoubleDoorRight
-    7400000: DoubleDoorRight|DoubleDoorLeftAction
-    7400002: DoubleDoorRight|DoubleDoorLeftAction.001
-    7400004: DoubleDoorRight|DoubleDoorRightAction
-    7400006: DoubleDoorRight|DoubleDoorRightAction.001
+    4300000: DoubleDoorLeft
+    7400000: DoubleDoorLeft|DoubleDoorLeft|DoubleDoorLeft|DoubleDoorLeft|DoubleDoorLeft.000
+    7400002: DoubleDoorLeft|DoubleDoorLeft|DoubleDoorLeft|DoubleDoorLeft|DoubleDoorLeft.001
+    7400004: DoubleDoorLeft|DoubleDoorLeft|DoubleDoorLeft|DoubleDoorLeft|DoubleDoorLeft.002
+    7400006: DoubleDoorLeft|DoubleDoorLeft|DoubleDoorLeft|DoubleDoorLeft|DoubleDoorLeft|Dou
     9500000: //RootNode
   externalObjects: {}
   materials:
