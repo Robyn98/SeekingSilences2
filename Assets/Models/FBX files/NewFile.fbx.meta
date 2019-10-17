@@ -1,18 +1,24 @@
 fileFormatVersion: 2
-guid: 06dbd1cd6c2a3c649851ced84ac060f1
+guid: 5313d8bf3bfdf1e4e8e7be4efefe7dcf
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: Material.002
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: DoubleDoorLeft
-    7400000: DoubleDoorLeft|DoubleDoorLeftAction
-    7400002: DoubleDoorLeft|DoubleDoorLeftAction.001
-    7400004: DoubleDoorLeft|DoubleDoorRightAction
-    7400006: DoubleDoorLeft|DoubleDoorRightAction.001
+    100000: FileBottom
+    100002: FileTop
+    100004: //RootNode
+    400000: FileBottom
+    400002: FileTop
+    400004: //RootNode
+    2100000: Material
+    2100002: Material.001
+    2300000: FileBottom
+    2300002: FileTop
+    3300000: FileBottom
+    3300002: FileTop
+    4300000: FileBottom
+    4300002: FileTop
+    7400000: FileTop|Open
+    7400002: FileTop|Close
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -41,7 +47,63 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: FileTop|Open
+      takeName: FileTop|Cube.001Action
+      firstFrame: 0
+      lastFrame: 18
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: FileTop|Close
+      takeName: FileTop|Cube.001Action
+      firstFrame: 21
+      lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
