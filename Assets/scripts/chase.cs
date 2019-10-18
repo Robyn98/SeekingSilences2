@@ -30,14 +30,14 @@ public class chase : MonoBehaviour {
         //the more noise you make, the further away he will chase you from
         if (Vector3.Distance(player.position, this.transform.position) < (10 + (chaseSpeed-0.5)) && angle < 90) 
 		{
-			
+			Debug.Log(direction.magnitude);
 			direction.y = 0;
 
 			this.transform.rotation = Quaternion.Slerp(this.transform.rotation,
 										Quaternion.LookRotation(direction), 0.1f);
 
 			anim.SetBool("isIdle",false);
-			if(direction.magnitude > 5)
+			if(direction.magnitude > 10)
 			{
 				this.transform.Translate(0,0,chaseSpeed);
 				anim.SetBool("isWalking",true);

@@ -8,7 +8,7 @@ public class DoctorController : MonoBehaviour
 
     public NavMeshAgent agent;
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         agent.SetDestination(player.gameObject.transform.position);
     }
