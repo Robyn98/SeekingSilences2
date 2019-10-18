@@ -69,6 +69,29 @@ public class ExitDoorController : MonoBehaviour
                 }
             }
         }
+        if (other.CompareTag("DoctorDoor"))
+        {
+            // Show the instructions
+            instructions.SetActive(true);
+            // Get the Animator from the child of the ExitDoor (If you have the Animator component in the parent,
+            // then change it to "GetComponent")
+            Animator anim = other.GetComponentInChildren<Animator>();
+            // Check if the player hits the "E" key and the player has the key
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (kc.hasKey2)
+                {
+                    anim.SetTrigger("OpenCloseDoor"); //Set the trigger "OpenClose" which is in the Animator
+                    //ExitDoorAudio.PlayOneShot(ExitDoorSound);
+                    RandomExitDoorAudio();
+                    kc.hasKeyImage2.gameObject.SetActive(false); //no visual rep
+                }
+                else
+                {
+                    RandomClosedExitDoorAudio();
+                }
+            }
+        }
 
         if (!other.CompareTag("ExitDoor")) return;
         {

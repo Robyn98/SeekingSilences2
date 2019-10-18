@@ -4,12 +4,30 @@
     <e p="C:\Users\admin\.Rider2019.2\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\admin\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_SS2.66234703.00" t="ExcludeRecursive" />
     <e p="D:\_University\Semester 2\GD3B\SS2" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="NavMeshComponents" t="Include">
+          <e p="Editor" t="Include">
+            <e p="NavMeshComponentsGUIUtility.cs" t="Include" />
+            <e p="NavMeshLinkEditor.cs" t="Include" />
+            <e p="NavMeshModifierEditor.cs" t="Include" />
+            <e p="NavMeshModifierVolumeEditor.cs" t="Include" />
+            <e p="NavMeshSurfaceEditor.cs" t="Include" />
+          </e>
+          <e p="scripts" t="Include">
+            <e p="NavMeshLink.cs" t="Include" />
+            <e p="NavMeshModifier.cs" t="Include" />
+            <e p="NavMeshModifierVolume.cs" t="Include" />
+            <e p="NavMeshSurface.cs" t="Include" />
+          </e>
+        </e>
+        <e p="NavMeshDoorHandler.cs" t="Include" />
         <e p="scripts" t="Include">
           <e p="BGController.cs" t="Include" />
           <e p="BoxController.cs" t="Include" />
           <e p="chase.cs" t="Include" />
+          <e p="DoctorController.cs" t="Include" />
           <e p="DoorController.cs" t="Include" />
           <e p="ExitDoorController.cs" t="Include" />
           <e p="FEController.cs" t="Include" />

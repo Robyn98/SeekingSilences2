@@ -27,18 +27,25 @@ using UnityEngine.UI;
 
 public class KeyController : MonoBehaviour
 {
-    // The gameobject / UI that has the instructions for the player "Press 'E' to interact."
-    public GameObject Keyinstructions;
-
+   
     
 
     public AudioSource keyAudio;
     public AudioClip[] soundToPlay;
     public chase c;
     
+    // The gameobject / UI that has the instructions for the player "Press 'E' to interact."
+    public GameObject Keyinstructions;
+
     public Image hasKeyImage;
     public bool hasKey = false;
     public GameObject KeyTrigger;
+    
+    public GameObject Keyinstructions2;
+
+    public Image hasKeyImage2;
+    public bool hasKey2 = false;
+    public GameObject KeyTrigger2;
     
     public GameObject KeyinstructionsExit;
     public Image hasKeyImageExit;
@@ -47,6 +54,9 @@ public class KeyController : MonoBehaviour
     [SerializeField] private AudioSource AS;
     [SerializeField] private AudioClip run;
     [SerializeField] private GameObject runHint;
+    [SerializeField] private GameObject doctor;
+    [SerializeField] private GameObject blockoff;
+    [SerializeField] private GameObject blockoff1;
 
 
     void Start()
@@ -64,7 +74,7 @@ public class KeyController : MonoBehaviour
         
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("Picked up Key");
+                //Debug.Log("Picked up Key");
                 
                 RandomKeyAudio();
                 
@@ -74,13 +84,34 @@ public class KeyController : MonoBehaviour
                 Keyinstructions.SetActive(false); //no ins
             }
         }
+        if (other.name == "TriggerKey2")
+        {
+           
+            // Show the instructions
+            Keyinstructions2.SetActive(true);
+        
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                blockoff.gameObject.SetActive(false);
+                blockoff1.gameObject.SetActive(false);
+                doctor.gameObject.SetActive(true);
+                //Debug.Log("Picked up Key");
+                
+                RandomKeyAudio();
+                
+                hasKeyImage2.gameObject.SetActive(true); //visual rep
+                hasKey2 = true; //for logic
+                Destroy(KeyTrigger2); //no physical key
+                Keyinstructions2.SetActive(false); //no ins
+            }
+        }
 
         if (other.name != "TriggerKeyExit") return;
         // Show the instructions
         Keyinstructions.SetActive(true);
 
         if (!Input.GetKeyDown(KeyCode.E)) return;
-        Debug.Log("Picked up Key for exit");
+        //Debug.Log("Picked up Key for exit");
                 
         RandomKeyAudio();
         AS.PlayOneShot(run);
