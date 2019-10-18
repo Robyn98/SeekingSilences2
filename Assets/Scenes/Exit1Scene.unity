@@ -30951,7 +30951,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -31215,7 +31215,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -31314,9 +31314,8 @@ MonoBehaviour:
   FEinstructions: {fileID: 1127104092}
   keyAudio: {fileID: 975878772}
   soundToPlay:
-  - {fileID: 8300000, guid: d5ec0a8407b1ba0488a489f94ba635e3, type: 3}
-  - {fileID: 8300000, guid: ef60d3dc2ec6b074c99813db34a79791, type: 3}
-  - {fileID: 8300000, guid: 6b7632d9b83e6d1489252c25e3172129, type: 3}
+  - {fileID: 8300000, guid: da3ad5ef46e2a1c40afd42a6c7b99dcd, type: 3}
+  - {fileID: 8300000, guid: 08076b697a35b4945bcf2225216e8f57, type: 3}
   c: {fileID: 799145204}
   hasFEImage: {fileID: 1514561844}
   hasFE: 0
@@ -31339,7 +31338,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -31836,7 +31835,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 1
   Mute: 0
