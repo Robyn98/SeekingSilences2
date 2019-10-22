@@ -15,6 +15,8 @@ public class ThrowObject : MonoBehaviour
     public AudioClip[] hitEnv;
     public int dmg;
     private bool touched = false;
+    
+    public GameObject instructions;
 
     void Start()
     {
@@ -24,20 +26,29 @@ public class ThrowObject : MonoBehaviour
 
     void Update()
     {
+        
         float dist = Vector3.Distance(gameObject.transform.position, player.position);
+        Debug.Log("dist: " + dist);
         if (dist <= 4.5f)
         {
             hasPlayer = true;
+            instructions.gameObject.SetActive(true);
+        }
+        else if (dist > 4.5f && dist < 7.5f)
+        {
+            instructions.gameObject.SetActive(false);
         }
         else
         {
             hasPlayer = false;
+            
         }
         if (hasPlayer && Input.GetKeyDown(KeyCode.E))
         {
             GetComponent<Rigidbody>().isKinematic = true;
             transform.parent = playerCam;
             beingCarried = true;
+            instructions.gameObject.SetActive(false);
         }
         if (beingCarried)
         {
@@ -47,6 +58,7 @@ public class ThrowObject : MonoBehaviour
                 transform.parent = null;
                 beingCarried = false;
                 touched = false;
+                //instructions.gameObject.SetActive(false);
             }
             if (Input.GetMouseButtonDown(0))
             {
@@ -56,6 +68,7 @@ public class ThrowObject : MonoBehaviour
                 GetComponent<Rigidbody>().AddForce(playerCam.forward * throwForce);
                 RandomAudio();
                 c.chaseSpeed *= 1.1f;
+                //instructions.gameObject.SetActive(false);
                 //Debug.Log(c.chaseSpeed);
             }
             else if (Input.GetMouseButtonDown(1))
@@ -63,6 +76,7 @@ public class ThrowObject : MonoBehaviour
                 GetComponent<Rigidbody>().isKinematic = false;
                 transform.parent = null;
                 beingCarried = false;
+                //instructions.gameObject.SetActive(false);
             }
         }
     }
@@ -95,7 +109,7 @@ public class ThrowObject : MonoBehaviour
 
             RandomAudioHitEnv();
             touched = true;
-            
+            //instructions.gameObject.SetActive(false);
             c.chaseSpeed *=1.1f;
             //Debug.Log(c.chaseSpeed);
             

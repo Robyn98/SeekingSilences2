@@ -103,7 +103,7 @@ public class BGController : MonoBehaviour
     {
         if (beforeWait)
         {
-            yield return new WaitForSeconds(5.0f);
+            yield return new WaitForSeconds(1.0f);
         }
         
         go.gameObject.SetActive(true);

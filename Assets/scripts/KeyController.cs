@@ -47,6 +47,7 @@ public class KeyController : MonoBehaviour
     public bool hasKey2 = false;
     public GameObject KeyTrigger2;
     
+    public GameObject exitKeyHint;
     public GameObject KeyinstructionsExit;
     public Image hasKeyImageExit;
     public bool hasKeyExit = false;
@@ -103,6 +104,7 @@ public class KeyController : MonoBehaviour
                 hasKey2 = true; //for logic
                 Destroy(KeyTrigger2); //no physical key
                 Keyinstructions2.SetActive(false); //no ins
+                StartCoroutine(StartCountdown(5f,exitKeyHint));
             }
         }
 
