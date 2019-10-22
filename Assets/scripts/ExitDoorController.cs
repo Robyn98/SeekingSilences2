@@ -122,7 +122,7 @@ public class ExitDoorController : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         // Check it is a ExitDoor
-        if (other.CompareTag("ExitDoor") || other.CompareTag("DoubleDoor"))
+        if (other.CompareTag("ExitDoor") || other.CompareTag("DoubleDoor") || other.CompareTag("DoctorDoor"))
         {
             // Hide instructions
             instructions.SetActive(false);
