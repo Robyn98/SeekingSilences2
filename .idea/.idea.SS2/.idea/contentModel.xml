@@ -38,6 +38,7 @@
           <e p="KeyController.cs" t="Include" />
           <e p="PlayerLook.cs" t="Include" />
           <e p="PlayerMove.cs" t="Include" />
+          <e p="roamingStart.cs" t="Include" />
           <e p="ThrowObject.cs" t="Include" />
           <e p="TimsFolder" t="Include">
             <e p="DoorController.cs" t="Include" />

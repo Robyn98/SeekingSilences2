@@ -54,7 +54,7 @@ public class KeyController : MonoBehaviour
     [SerializeField] private AudioSource AS;
     [SerializeField] private AudioClip run;
     [SerializeField] private GameObject runHint;
-    [SerializeField] private GameObject doctor;
+    [SerializeField] private GameObject roamingStartTrigger;
     [SerializeField] private GameObject blockoff;
     [SerializeField] private GameObject blockoff1;
 
@@ -94,7 +94,7 @@ public class KeyController : MonoBehaviour
             {
                 blockoff.gameObject.SetActive(false);
                 blockoff1.gameObject.SetActive(false);
-                doctor.gameObject.SetActive(true);
+                roamingStartTrigger.gameObject.SetActive(true);
                 //Debug.Log("Picked up Key");
                 
                 RandomKeyAudio();
