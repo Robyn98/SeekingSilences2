@@ -18257,6 +18257,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Classic fluorescent lamp
       objectReference: {fileID: 0}
+    - target: {fileID: 1924386759, guid: 94e472da99198764cb9d172d651d1b5c, type: 3}
+      propertyPath: m_Range
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 469760, guid: 94e472da99198764cb9d172d651d1b5c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.0455904
@@ -18320,10 +18324,6 @@ PrefabInstance:
     - target: {fileID: 1924386758, guid: 94e472da99198764cb9d172d651d1b5c, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1924386759, guid: 94e472da99198764cb9d172d651d1b5c, type: 3}
-      propertyPath: m_Range
-      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2319894, guid: 94e472da99198764cb9d172d651d1b5c, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -32289,6 +32289,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Classic fluorescent lamp (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1924386759, guid: 94e472da99198764cb9d172d651d1b5c, type: 3}
+      propertyPath: m_Range
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 469760, guid: 94e472da99198764cb9d172d651d1b5c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.0455904
@@ -32344,10 +32348,6 @@ PrefabInstance:
     - target: {fileID: 1924386758, guid: 94e472da99198764cb9d172d651d1b5c, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 1924386759, guid: 94e472da99198764cb9d172d651d1b5c, type: 3}
-      propertyPath: m_Range
-      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2319894, guid: 94e472da99198764cb9d172d651d1b5c, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -57127,6 +57127,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Classic fluorescent lamp (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1924386759, guid: 94e472da99198764cb9d172d651d1b5c, type: 3}
+      propertyPath: m_Range
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 469760, guid: 94e472da99198764cb9d172d651d1b5c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.0455904
@@ -57182,10 +57186,6 @@ PrefabInstance:
     - target: {fileID: 1924386758, guid: 94e472da99198764cb9d172d651d1b5c, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 1924386759, guid: 94e472da99198764cb9d172d651d1b5c, type: 3}
-      propertyPath: m_Range
-      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2319894, guid: 94e472da99198764cb9d172d651d1b5c, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -59855,7 +59855,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3681915, g: 0.36955908, b: 0.3962264, a: 1}
   m_Intensity: 20.48
   m_Range: 13.98
   m_SpotAngle: 42
@@ -70805,7 +70805,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.3419811, g: 0.35512838, b: 0.5, a: 1}
   m_Intensity: 0.74
   m_Range: 10
   m_SpotAngle: 30
