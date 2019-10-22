@@ -22,7 +22,6 @@
             <e p="NavMeshSurface.cs" t="Include" />
           </e>
         </e>
-        <e p="NavMeshDoorHandler.cs" t="Include" />
         <e p="scripts" t="Include">
           <e p="BGController.cs" t="Include" />
           <e p="BoxController.cs" t="Include" />
