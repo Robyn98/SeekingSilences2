@@ -24,7 +24,7 @@ public class roamingStart : MonoBehaviour {
         
         //doors open
         var anim = bigDoor.GetComponentInChildren<Animator>();
-        StartCoroutine(StartCountdown(5f, anim));
+        StartCoroutine(StartCountdown(15f, anim));
 
     }
 
