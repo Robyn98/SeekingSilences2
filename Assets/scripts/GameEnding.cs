@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 public class GameEnding : MonoBehaviour
 {
     public float fadeDuration = 1f;
@@ -19,14 +20,21 @@ public class GameEnding : MonoBehaviour
     bool m_HasAudioPlayed;
 
     public chase c;
-    
+
     private float timeLeft = 0.1f;
     [SerializeField] private GameObject GameOverPanel;
     [SerializeField] private Image GameOverImage;
     [SerializeField] private Image GameOverTextImage;
     private float alphaLevel = 0f;
     private int count = 50;
-    
+
+    private float wintimeLeft = 0.1f;
+    [SerializeField] private GameObject winPanel;
+    [SerializeField] private Image winImage;
+    [SerializeField] private Image winTextImage;
+    private float winalphaLevel = 0f;
+    private int wincount = 50;
+
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log("Exit1");
@@ -51,12 +59,13 @@ public class GameEnding : MonoBehaviour
         {
             EndLevel(exitBackgroundImage, false, exitAudio);
             //Debug.Log("Exit3");
-
+            winPanel.gameObject.SetActive(true);
+            Win();
         }
         else if (m_IsPlayerCaught)
         {
             EndLevel(caughtBackgroundImage, true, caughtAudio);
-            Debug.Log("[CAUGHT]");
+            //Debug.Log("[CAUGHT]");
             GameOverPanel.gameObject.SetActive(true);
             Caught();
         }
@@ -77,7 +86,8 @@ public class GameEnding : MonoBehaviour
         if (!(m_Timer > fadeDuration + displayImageDuration)) return;
         if (doRestart)
         {
-            Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name);
         }
         else
         {
@@ -105,6 +115,32 @@ public class GameEnding : MonoBehaviour
             GameOverTextImage.gameObject.SetActive(false);
             GameOverImage.gameObject.SetActive(false);
             GameOverPanel.gameObject.SetActive(false);
+        }
+    }
+
+    private void Win()
+    {
+        //Debug.Log("Won!");
+        wintimeLeft -= Time.deltaTime;
+        if (wincount > 0)
+        {
+            if (wintimeLeft < 0)
+            {
+                Debug.Log("winalphaLevel: "+winalphaLevel);
+                winalphaLevel += 0.02f;
+                winImage.color = new Color(1, 1, 1, winalphaLevel);
+                winTextImage.color = new Color(1, 1, 1, winalphaLevel);
+                wintimeLeft = 0.1f;
+                wincount--;
+            }
+        }
+        else
+        {
+            //winTextImage.gameObject.SetActive(false);
+            //winImage.gameObject.SetActive(false);
+            //winPanel.gameObject.SetActive(false);
+            //Debug.Log("Won!");
+            //Application.Quit();
         }
     }
 }
