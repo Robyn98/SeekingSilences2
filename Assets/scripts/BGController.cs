@@ -50,7 +50,7 @@ public class BGController : MonoBehaviour
     {
 
 
-        if (other.name == "TriggerBG")
+        if (other.tag == "Broken Glass")
         {
             // Show the instructions
             BGinstructions.SetActive(true);
@@ -60,7 +60,7 @@ public class BGController : MonoBehaviour
             // Check if the player hits the "E" key
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("Picked up BG");
+                //Debug.Log("Picked up BG");
                 //anim.SetTrigger("OpenCloseDoor"); //Set the trigger "OpenClose" which is in the Animator
                 //doorAudio.PlayOneShot(doorSound);
                 RandomKeyAudio();
@@ -79,7 +79,7 @@ public class BGController : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
 
-        if (other.tag == "BG")
+        if (other.tag == "Broken Glass")
         {
             // Hide instructions
             BGinstructions.SetActive(false);

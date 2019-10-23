@@ -72,7 +72,7 @@ public class FEController : MonoBehaviour
         //Animator anim = other.GetComponentInChildren<Animator>();
         // Check if the player hits the "E" key
         if (!Input.GetKeyDown(KeyCode.E)) return;
-        Debug.Log("Picked up FE");
+        //Debug.Log("Picked up FE");
         //anim.SetTrigger("OpenCloseDoor"); //Set the trigger "OpenClose" which is in the Animator
         //doorAudio.PlayOneShot(doorSound);
         RandomKeyAudio();

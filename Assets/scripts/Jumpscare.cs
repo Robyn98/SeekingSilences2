@@ -24,7 +24,7 @@ public class Jumpscare : MonoBehaviour {
     }
 
     private void OnTriggerEnter (Collider player) {
-        Debug.Log("Entered: "+ entered);
+//        Debug.Log("Entered: "+ entered);
         if (!player.CompareTag("Player") || entered) return;
         entered = true;
         jumpscareObject.SetActive(true);

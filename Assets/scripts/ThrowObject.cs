@@ -28,7 +28,7 @@ public class ThrowObject : MonoBehaviour
     {
         
         float dist = Vector3.Distance(gameObject.transform.position, player.position);
-        Debug.Log("dist: " + dist);
+        //Debug.Log("dist: " + dist);
         if (dist <= 4.5f)
         {
             hasPlayer = true;
@@ -105,7 +105,7 @@ public class ThrowObject : MonoBehaviour
         if (beingCarried && other.tag != "Door")
         {
             //Debug.Log("Not hitting door");
-            Debug.Log("Tag: "+ other.tag);
+            //Debug.Log("Tag: "+ other.tag);
 
             RandomAudioHitEnv();
             touched = true;

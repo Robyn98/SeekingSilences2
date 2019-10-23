@@ -13,7 +13,7 @@ public class roamingStart : MonoBehaviour {
     [SerializeField] private GameObject bigDoor;
     private static readonly int OpenCloseDoor = Animator.StringToHash("OpenCloseDoor");
     private void OnTriggerEnter (Collider player) {
-        Debug.Log("Entered: "+ entered);
+        //Debug.Log("Entered: "+ entered);
         if (!player.CompareTag("Player") || entered) return;
         entered = true;
         

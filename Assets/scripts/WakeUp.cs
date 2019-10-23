@@ -1,17 +1,19 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class WakeUp : MonoBehaviour
 {
-    float timeLeft = 0.1f;
+    private float timeLeft = 0.1f;
+    [SerializeField] private GameObject WakeUpPanel;
     [SerializeField] private Image WakeUpImage;
     [SerializeField] private Image IntroImage;
     private float alphaLevel = 1f;
     private int count = 100;
 
-    void Update()
+    private void Update()
     {
         timeLeft -= Time.deltaTime;
         if (count > 0)
@@ -28,6 +30,8 @@ public class WakeUp : MonoBehaviour
         else
         {
             IntroImage.gameObject.SetActive(false);
+            WakeUpImage.gameObject.SetActive(false);
+            WakeUpPanel.gameObject.SetActive(false);
         }
     }
 }

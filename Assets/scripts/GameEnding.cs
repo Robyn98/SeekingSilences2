@@ -19,7 +19,14 @@ public class GameEnding : MonoBehaviour
     bool m_HasAudioPlayed;
 
     public chase c;
-
+    
+    private float timeLeft = 0.1f;
+    [SerializeField] private GameObject GameOverPanel;
+    [SerializeField] private Image GameOverImage;
+    [SerializeField] private Image GameOverTextImage;
+    private float alphaLevel = 0f;
+    private int count = 50;
+    
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log("Exit1");
@@ -32,12 +39,14 @@ public class GameEnding : MonoBehaviour
 
     public void CaughtPlayer()
     {
+        //Debug.Log("[CaughtPlayer()]");
         m_IsPlayerCaught = true;
         //Debug.Log("Caught");
     }
 
     private void Update()
     {
+        //Debug.Log("[UPDATE]");
         if (m_IsPlayerAtExit)
         {
             EndLevel(exitBackgroundImage, false, exitAudio);
@@ -47,6 +56,9 @@ public class GameEnding : MonoBehaviour
         else if (m_IsPlayerCaught)
         {
             EndLevel(caughtBackgroundImage, true, caughtAudio);
+            Debug.Log("[CAUGHT]");
+            GameOverPanel.gameObject.SetActive(true);
+            Caught();
         }
     }
 
@@ -60,7 +72,7 @@ public class GameEnding : MonoBehaviour
 
         m_Timer += Time.deltaTime;
         //image.alpha = m_Timer / fadeDuration;
-        image.gameObject.SetActive(true);
+        ///image.gameObject.SetActive(true);
         //Debug.Log("Exit4");
         if (!(m_Timer > fadeDuration + displayImageDuration)) return;
         if (doRestart)
@@ -71,6 +83,28 @@ public class GameEnding : MonoBehaviour
         {
             //Debug.Log("Exit5");
             Application.Quit();
+        }
+    }
+
+    private void Caught()
+    {
+        timeLeft -= Time.deltaTime;
+        if (count > 0)
+        {
+            if (timeLeft < 0)
+            {
+                alphaLevel += 0.02f;
+                GameOverImage.color = new Color(0, 0, 0, alphaLevel);
+                GameOverTextImage.color = new Color(0, 0, 0, alphaLevel);
+                timeLeft = 0.1f;
+                count--;
+            }
+        }
+        else
+        {
+            GameOverTextImage.gameObject.SetActive(false);
+            GameOverImage.gameObject.SetActive(false);
+            GameOverPanel.gameObject.SetActive(false);
         }
     }
 }
