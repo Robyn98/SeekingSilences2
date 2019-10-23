@@ -44,6 +44,7 @@
             <e p="DoorController.cs" t="Include" />
             <e p="InteractableBehaviour.cs" t="Include" />
           </e>
+          <e p="WakeUp.cs" t="Include" />
         </e>
         <e p="SimpleGridShader" t="Include">
           <e p="DistanceScaling.cs" t="Include" />
