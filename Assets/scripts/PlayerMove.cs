@@ -25,6 +25,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private KeyCode jumpKey;
 
     public AudioSource m_AudioSource;
+    public AudioSource ASRun;
     public chase c;
 
     private bool isJumping;
@@ -40,26 +41,6 @@ public class PlayerMove : MonoBehaviour
         PlayerMovement();
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        var interactable = other.GetComponent<InteractableBehaviour>();
-        if ( interactable == null )
-        {
-            return;
-        }
-
-        if (Input.GetKey(KeyCode.E))
-        {
-            if (interactable is DoorController)
-            {
-                //////
-                /// retuen
-            }
-            
-            interactable.Interact(this);
-        }
-
-    }
 
     private void PlayerMovement()
     {
@@ -75,7 +56,7 @@ public class PlayerMove : MonoBehaviour
         if ((vertInput != 0 || horizInput != 0) && OnSlope())
             charController.Move(Vector3.down * charController.height / 2 * slopeForce * Time.deltaTime);
 
-        if(horizInput > 0 || vertInput > 0)
+        if ((vertInput != 0 || horizInput != 0))
         {
             c.chaseSpeed += 0.0000001f;
             //Debug.Log(c.chaseSpeed);
@@ -96,9 +77,19 @@ public class PlayerMove : MonoBehaviour
     private void SetMovementSpeed()
     {
         if (Input.GetKey(runKey))
+        {
             movementSpeed = Mathf.Lerp(movementSpeed, runSpeed, Time.deltaTime * runBuildUpSpeed);
+            if (!ASRun.isPlaying)
+            {
+                ASRun.Play();
+            }
+        }
         else
+        {
             movementSpeed = Mathf.Lerp(movementSpeed, walkSpeed, Time.deltaTime * runBuildUpSpeed);
+            ASRun.Stop();
+        }
+            
     }
 
 
@@ -144,5 +135,4 @@ public class PlayerMove : MonoBehaviour
         charController.slopeLimit = 45.0f;
         isJumping = false;
     }
-
 }

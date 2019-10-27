@@ -136,6 +136,8 @@ public class KeyController : MonoBehaviour
         {
             // Hide instructions
             Keyinstructions.SetActive(false);
+            Keyinstructions2.SetActive(false);
+            KeyinstructionsExit.SetActive(false);
         }
 
     }
