@@ -34,6 +34,7 @@
           <e p="FlickeringLight.cs" t="Include" />
           <e p="GameEnding.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
+          <e p="JumpIns.cs" t="Include" />
           <e p="Jumpscare.cs" t="Include" />
           <e p="KeyController.cs" t="Include" />
           <e p="PlayerLook.cs" t="Include" />
