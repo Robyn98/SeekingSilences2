@@ -30651,7 +30651,7 @@ MonoBehaviour:
   playerCam: {fileID: 559683654}
   throwForce: 10
   soundToPlay:
-  - {fileID: 8300000, guid: 099906c9fbf81504a9f58d538c36f7a4, type: 3}
+  - {fileID: 8300000, guid: d93f987b42a82c545953bddb0951ebb4, type: 3}
   hitEnv:
   - {fileID: 8300000, guid: 59f6cde60f2eb764582c6827744585fa, type: 3}
   - {fileID: 8300000, guid: 70328a5edaa9e4e449146790e4271916, type: 3}
@@ -60535,7 +60535,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Press 'E' to pick up
+  m_Text: 'Press ''Fire1'' to pick up/throw
+
+    Press ''Fire2'' to drop'
 --- !u!222 &1110808609
 CanvasRenderer:
   m_ObjectHideFlags: 0
