@@ -1861,6 +1861,7 @@ MonoBehaviour:
   translationMultiplier: 30
   deleteTime: 1.5
   shiftIns: {fileID: 1551150549}
+  cameraShake: {fileID: 559683657}
 --- !u!65 &27101659
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10108,6 +10109,7 @@ MonoBehaviour:
   translationMultiplier: 30
   deleteTime: 1.5
   shiftIns: {fileID: 147910300}
+  cameraShake: {fileID: 559683657}
 --- !u!65 &186845834
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28898,6 +28900,7 @@ GameObject:
   - component: {fileID: 559683654}
   - component: {fileID: 559683656}
   - component: {fileID: 559683655}
+  - component: {fileID: 559683657}
   m_Layer: 0
   m_Name: PlayerCamera
   m_TagString: Untagged
@@ -28978,6 +28981,18 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &559683657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559683653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9bcaf092e5f97e45b86a343595fb1db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &561239615
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47654,6 +47669,7 @@ MonoBehaviour:
   translationMultiplier: 30
   deleteTime: 2.5
   shiftIns: {fileID: 1212523241}
+  cameraShake: {fileID: 559683657}
 --- !u!65 &892951024
 BoxCollider:
   m_ObjectHideFlags: 0

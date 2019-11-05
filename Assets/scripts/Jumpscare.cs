@@ -12,6 +12,7 @@ public class Jumpscare : MonoBehaviour
     [SerializeField] private float deleteTime = 2.5f;
 
     [SerializeField] private GameObject shiftIns;
+    [SerializeField] private CameraShake cameraShake;
     private void Start()
     {
         jumpscareObject.SetActive(false);
@@ -30,6 +31,9 @@ public class Jumpscare : MonoBehaviour
         if (!player.CompareTag("Player") || entered) return;
         entered = true;
         jumpscareObject.SetActive(true);
+        //Camera Shake
+        StartCoroutine(cameraShake.Shake(0.25f, 0.8f));
+        
         StartCoroutine(DestroyObject());
 
         StartCoroutine(StartCountdown(5f,shiftIns, 3f));

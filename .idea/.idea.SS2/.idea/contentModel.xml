@@ -25,6 +25,7 @@
         <e p="scripts" t="Include">
           <e p="BGController.cs" t="Include" />
           <e p="BoxController.cs" t="Include" />
+          <e p="CameraShake.cs" t="Include" />
           <e p="chase.cs" t="Include" />
           <e p="DoctorController.cs" t="Include" />
           <e p="DoorController.cs" t="Include" />
