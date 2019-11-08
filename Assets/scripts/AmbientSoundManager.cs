@@ -6,11 +6,11 @@ using UnityEngine;
 public class AmbientSoundManager : MonoBehaviour
 {
     [SerializeField] private AudioSource AS;
-    [SerializeField] private float Vo = 1f;
+    [SerializeField] private float Vo = 0.8f;
     [SerializeField] private float Vn = 0.3f;
-    [SerializeField] private float curr;
+    [SerializeField] private float curr = 0.3f;
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("LowerSound"))
         {
@@ -36,6 +36,7 @@ public class AmbientSoundManager : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
             AS.volume = curr;
             curr -= 0.1f;
+            Debug.Log(AS.volume);
         }
 
         //curr = Vo;
@@ -43,11 +44,12 @@ public class AmbientSoundManager : MonoBehaviour
 
     public IEnumerator inc()
     {
-        while (curr <= Vo)
+        while (curr - 0.1f <= Vo)
         {
             yield return new WaitForSeconds(0.2f);
             AS.volume = curr;
             curr += 0.1f;
+            Debug.Log(AS.volume);
         }
 
         //curr = Vo;
