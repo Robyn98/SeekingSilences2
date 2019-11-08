@@ -14,6 +14,7 @@ TagManager:
   - DoubleDoor
   - Outside
   - DoctorDoor
+  - LowerSound
   layers:
   - Default
   - TransparentFX
