@@ -20,9 +20,11 @@ public class DoorController : MonoBehaviour
     private bool firstDoorOpen = false;
     public AudioSource AS;
     public AudioClip SIR;
+    public AudioClip BreakSound;
     private static readonly int OpenCloseDoor = Animator.StringToHash("OpenCloseDoor");
 
     private bool ER1DT = false;
+    private bool FETR= false;
 
     //private bool TRDT = false;
     [SerializeField] private AudioClip DoorSlamSound;
@@ -46,7 +48,16 @@ public class DoorController : MonoBehaviour
         {
             anim.SetTrigger(OpenCloseDoor); //Set the trigger "OpenClose" which is in the Animator
             //doorAudio.PlayOneShot(doorSound);
-            RandomDoorAudio();
+            if (!FETR)
+            {
+                doorAudio.PlayOneShot(BreakSound);
+                FETR = true;
+            }
+            else
+            {
+                RandomDoorAudio();
+            }
+            
             fec.hasFEImage.gameObject.SetActive(false); //no visual rep
             //Intercom 2
             if (firstDoorOpen) return;

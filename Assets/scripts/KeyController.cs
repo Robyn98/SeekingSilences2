@@ -47,6 +47,7 @@ public class KeyController : MonoBehaviour
     public bool hasKey2 = false;
     public GameObject KeyTrigger2;
     
+    public GameObject exitKeyHint;
     public GameObject KeyinstructionsExit;
     public Image hasKeyImageExit;
     public bool hasKeyExit = false;
@@ -54,7 +55,7 @@ public class KeyController : MonoBehaviour
     [SerializeField] private AudioSource AS;
     [SerializeField] private AudioClip run;
     [SerializeField] private GameObject runHint;
-    [SerializeField] private GameObject doctor;
+    [SerializeField] private GameObject roamingStartTrigger;
     [SerializeField] private GameObject blockoff;
     [SerializeField] private GameObject blockoff1;
 
@@ -94,7 +95,7 @@ public class KeyController : MonoBehaviour
             {
                 blockoff.gameObject.SetActive(false);
                 blockoff1.gameObject.SetActive(false);
-                doctor.gameObject.SetActive(true);
+                roamingStartTrigger.gameObject.SetActive(true);
                 //Debug.Log("Picked up Key");
                 
                 RandomKeyAudio();
@@ -103,6 +104,7 @@ public class KeyController : MonoBehaviour
                 hasKey2 = true; //for logic
                 Destroy(KeyTrigger2); //no physical key
                 Keyinstructions2.SetActive(false); //no ins
+                StartCoroutine(StartCountdown(5f,exitKeyHint));
             }
         }
 
@@ -134,6 +136,8 @@ public class KeyController : MonoBehaviour
         {
             // Hide instructions
             Keyinstructions.SetActive(false);
+            Keyinstructions2.SetActive(false);
+            KeyinstructionsExit.SetActive(false);
         }
 
     }

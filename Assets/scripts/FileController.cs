@@ -34,7 +34,8 @@ public class FileController : MonoBehaviour
     public AudioClip[] soundToPlay;
     public AudioClip[] closedFileSoundToPlay;
     public chase c;
-    public Image FileContent;
+    public Image FileContentHF;
+    public Image FileContentMap;
     public bool fileOpen = false;
     private bool firstFileOpen = false;
     public AudioSource AS;
@@ -62,15 +63,23 @@ public class FileController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 fileOpen = !fileOpen;
-                Debug.Log("File Open? " + fileOpen);
-                if (fileOpen)
+                //Debug.Log("File Open? " + fileOpen);
+                if (fileOpen && (other.name == "PatientFileTriggerLobby" || other.name == "PatientFileTriggerTutRoom"))
                 {
-                    FileContent.gameObject.SetActive(true);
+                    //Debug.Log("HF");
+                    FileContentHF.gameObject.SetActive(true);
+                    //Debug.Log("HF2");
+                    
+                }
+                else if (fileOpen && (other.name == "MapFileTriggerLobby"|| other.name == "MapFileTriggerRoom1"))
+                {
+                    FileContentMap.gameObject.SetActive(true);
                     
                 }
                 else
                 {
-                    FileContent.gameObject.SetActive(false);
+                    FileContentHF.gameObject.SetActive(false);
+                    FileContentMap.gameObject.SetActive(false);
                 }
                 anim.SetTrigger("OpenCloseFile"); //Set the trigger "OpenClose" which is in the Animator
                                                   //FileAudio.PlayOneShot(FileSound);
@@ -95,14 +104,20 @@ public class FileController : MonoBehaviour
             // Hide instructions
             instructions.SetActive(false);
 
-            if (fileOpen == true) //if file is open
+            if (fileOpen && (other.name == "PatientFileTriggerLobby" || other.name == "PatientFileTriggerTutRoom")) //if file is open
             {
-                FileContent.gameObject.SetActive(false);
+                FileContentHF.gameObject.SetActive(false);
+                other.GetComponentInChildren<Animator>().SetTrigger("OpenCloseFile");
+            }
+            else if (fileOpen && (other.name == "MapFileTriggerLobby"|| other.name == "MapFileTriggerRoom1")) //if file is open
+            {
+                FileContentMap.gameObject.SetActive(false);
                 other.GetComponentInChildren<Animator>().SetTrigger("OpenCloseFile");
             }
             else // or closed 
             {
-                FileContent.gameObject.SetActive(false);
+                FileContentHF.gameObject.SetActive(false);
+                FileContentMap.gameObject.SetActive(false);
             }
             //remove the text and set bool to false
             fileOpen = false;
