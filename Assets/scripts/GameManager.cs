@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("escape"))
+        if (Input.GetKeyDown("escape"))
         {
             P.pauseGame();
         }
