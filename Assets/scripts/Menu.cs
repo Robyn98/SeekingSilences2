@@ -7,7 +7,13 @@ public class Menu : MonoBehaviour
 {
     [SerializeField] private string Game;
     [SerializeField] private string Credits;
+    //[SerializeField] private PlayerLook PL;
 
+//    void Start()
+//    {
+//        //PL = GameObject.FindObjectOfType<PlayerLook>();
+//       // PL.UnLockCursor();
+//    }
     void Update()
     {
         //start

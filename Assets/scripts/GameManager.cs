@@ -16,11 +16,18 @@ public class GameManager : MonoBehaviour
 //        DDM = GameObject.FindObjectOfType<DontDestroyMusic>();
 //        Destroy(DDM);
 //    }
+[SerializeField] private PlayerLook PL;
 
+    
+    
+        
+    
     void Start()
     {
         WakeUpPanel.gameObject.SetActive(true);
         P = GameObject.FindObjectOfType<Pause>();
+        PL = GameObject.FindObjectOfType<PlayerLook>();
+        
     }
 
 
@@ -41,6 +48,7 @@ public class GameManager : MonoBehaviour
     public void QuitGame()
     {
         P.pauseGame();
+        PL.UnLockCursor();
         SceneManager.LoadScene("MenuScene");
         
     }

@@ -35,6 +35,15 @@ public class GameEnding : MonoBehaviour
     private float winalphaLevel = 0f;
     private int wincount = 50;
 
+    [SerializeField] private PlayerLook PL;
+    [SerializeField] private Pause P;
+
+    void Start()
+    {
+        PL = GameObject.FindObjectOfType<PlayerLook>();
+        P = GameObject.FindObjectOfType<Pause>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log("Exit1");
@@ -92,7 +101,15 @@ public class GameEnding : MonoBehaviour
         else
         {
             //Debug.Log("Exit5");
-            Application.Quit();
+            //Application.Quit();
+
+            if (P.isPaused)
+            {
+                P.pauseGame();
+            }
+
+            PL.UnLockCursor();
+            SceneManager.LoadScene("CreditsScene");
         }
     }
 
@@ -126,7 +143,7 @@ public class GameEnding : MonoBehaviour
         {
             if (wintimeLeft < 0)
             {
-                Debug.Log("winalphaLevel: "+winalphaLevel);
+                //  Debug.Log("winalphaLevel: "+winalphaLevel);
                 winalphaLevel += 0.02f;
                 winImage.color = new Color(1, 1, 1, winalphaLevel);
                 winTextImage.color = new Color(1, 1, 1, winalphaLevel);

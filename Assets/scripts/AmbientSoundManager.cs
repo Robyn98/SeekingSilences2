@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditorInternal;
+//using UnityEditorInternal;
 using UnityEngine;
 
 public class AmbientSoundManager : MonoBehaviour
@@ -36,7 +36,7 @@ public class AmbientSoundManager : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
             AS.volume = curr;
             curr -= 0.1f;
-            Debug.Log(AS.volume);
+          //  Debug.Log(AS.volume);
         }
 
         //curr = Vo;
@@ -49,7 +49,7 @@ public class AmbientSoundManager : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
             AS.volume = curr;
             curr += 0.1f;
-            Debug.Log(AS.volume);
+           // Debug.Log(AS.volume);
         }
 
         //curr = Vo;

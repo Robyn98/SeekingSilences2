@@ -13,7 +13,7 @@ public class PlayerLook : MonoBehaviour
 
     private void Awake()
     {
-        LockCursor();
+        LockCursor(); 
         xAxisClamp = 0.0f;
     }
 
@@ -21,12 +21,14 @@ public class PlayerLook : MonoBehaviour
     public void LockCursor()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         
     }
 
     public void UnLockCursor()
     {
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     private void Update()

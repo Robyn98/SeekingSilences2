@@ -21,7 +21,7 @@ public class Pause : MonoBehaviour
         {
             isPaused = false;
             Time.timeScale = 1;
-            Debug.Log("IS Playing");
+            //Debug.Log("IS Playing");
             pausePanel.gameObject.SetActive(false);
             PL.LockCursor();
         }
@@ -29,7 +29,7 @@ public class Pause : MonoBehaviour
         {
             isPaused = true;
             Time.timeScale = 0;
-            Debug.Log("IS PAUSED");
+            //Debug.Log("IS PAUSED");
             pausePanel.gameObject.SetActive(true);
             PL.UnLockCursor();
         }
