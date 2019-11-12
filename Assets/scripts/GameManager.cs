@@ -40,6 +40,8 @@ public class GameManager : MonoBehaviour
 
     public void QuitGame()
     {
+        P.pauseGame();
         SceneManager.LoadScene("MenuScene");
+        
     }
 }
