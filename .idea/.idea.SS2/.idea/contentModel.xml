@@ -7,6 +7,11 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Fonts" t="Include">
+          <e p="feral" t="Include">
+            <e p="1001fonts-feral-eula.txt" t="Include" />
+          </e>
+        </e>
         <e p="NavMeshComponents" t="Include">
           <e p="Editor" t="Include">
             <e p="NavMeshComponentsGUIUtility.cs" t="Include" />
@@ -28,7 +33,9 @@
           <e p="BoxController.cs" t="Include" />
           <e p="CameraShake.cs" t="Include" />
           <e p="chase.cs" t="Include" />
+          <e p="Credits.cs" t="Include" />
           <e p="DoctorController.cs" t="Include" />
+          <e p="DontDestroyMusic.cs" t="Include" />
           <e p="DoorController.cs" t="Include" />
           <e p="ExitDoorController.cs" t="Include" />
           <e p="FEController.cs" t="Include" />
@@ -39,6 +46,8 @@
           <e p="JumpIns.cs" t="Include" />
           <e p="Jumpscare.cs" t="Include" />
           <e p="KeyController.cs" t="Include" />
+          <e p="Menu.cs" t="Include" />
+          <e p="Pause.cs" t="Include" />
           <e p="PlayerLook.cs" t="Include" />
           <e p="PlayerMove.cs" t="Include" />
           <e p="roamingStart.cs" t="Include" />
